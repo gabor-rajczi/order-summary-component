@@ -63,7 +63,7 @@ const OrderSummary = (props: Props) => {
                 className={content}
             >
                 <Typography
-                    variant="h4"
+                    variant="h1"
                     align="center"
                     className={title}
                     gutterBottom
