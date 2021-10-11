@@ -24,9 +24,9 @@ const useStyles = makeStyles(theme => createStyles({
 const Page = (props: Props) => {
     const { root } = useStyles();
     return (
-        <div className={root}>
+        <main className={root} role="main">
             {props.children}
-        </div>
+        </main>
     )
 }
 
