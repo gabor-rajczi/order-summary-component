@@ -72,6 +72,7 @@ const OrderSummary = (props: Props) => {
                 </Typography>
                 <Typography
                     variant="subtitle1"
+                    component="h2"
                     align="center"
                     className={subtitle}
                     gutterBottom
