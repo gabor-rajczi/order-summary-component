@@ -38,7 +38,7 @@ declare module "@material-ui/core/styles/createPalette" {
 }
 
 
-const theme = createTheme({
+const themeDefault = createTheme({
     typography: {
         fontFamily: [
             "'Red Hat Display'",
@@ -61,7 +61,46 @@ const theme = createTheme({
             desaturated: "hsl(224, 23%, 55%)",
             dark: "hsl(223, 47%, 23%)",
         }
+    },
+    overrides: {
+        MuiButton: {
+            root: {
+                borderRadius: 10,
+                textTransform: "none",
+                fontWeight: 700,
+                padding: "12.5px",
+            },
+        },
+        MuiLink: {
+            root: {
+                fontWeight: 700,
+                textDecoration: "underline",
+            },
+            underlineHover: {
+                textDecoration: "none",
+            }
+        }
     }
 });
+
+const theme = createTheme({
+    overrides: {
+        MuiButton: {
+            containedPrimary: {
+                backgroundColor: themeDefault.palette.primaryBlue.bright,
+                "&:hover": {
+                    backgroundColor: "hsl(245 83% 68%)",
+                }
+            },
+            text: {
+                color: themeDefault.palette.neutralBlue.desaturated,
+                "&:hover": {
+                    color: themeDefault.palette.neutralBlue.dark,
+                    backgroundColor: "unset",
+                },
+            }
+        }
+    }
+}, themeDefault)
 
 export default theme;

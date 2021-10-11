@@ -25,26 +25,6 @@ const useStyles = makeStyles(theme => createStyles({
         flexDirection: "column",
         padding: 0,
     },
-    button: {
-        borderRadius: 10,
-        textTransform: "none",
-        padding: "12.5px",
-        fontWeight: 700,
-    },
-    proceedPayment: {
-        backgroundColor: theme.palette.primaryBlue.bright,
-        "&:hover": {
-            opacity: "75%"
-        },
-
-    },
-    cancelOrder: {
-        color: theme.palette.neutralBlue.desaturated,
-        "&:hover": {
-            color: theme.palette.neutralBlue.dark,
-            backgroundColor: "unset",
-        },
-    },
     planType: {
         fontWeight: 900,
         fontSize: "14px",
@@ -64,16 +44,10 @@ const useStyles = makeStyles(theme => createStyles({
         borderRadius: 10,
         padding: "1rem 0",
     },
-    change: {
-        fontWeight: 700,
-        "&:hover": {
-            textDecoration: "none",
-        },
-    },
 }), { name: "OrderSummary" });
 
 const OrderSummary = (props: Props) => {
-    const { root, title, subtitle, actions, button, proceedPayment, cancelOrder, planType, fee, content, plan, change } = useStyles();
+    const { root, title, subtitle, actions, planType, fee, content, plan } = useStyles();
     return (
         <Card
             raised={false}
@@ -104,7 +78,12 @@ const OrderSummary = (props: Props) => {
                 >
                     You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
                 </Typography>
-                <Grid container alignItems="center" justifyContent="space-evenly" className={plan}>
+                <Grid
+                    container
+                    alignItems="center"
+                    justifyContent="space-evenly"
+                    className={plan}
+                >
                     <Grid item>
                         <IconMusic />
                     </Grid>
@@ -116,12 +95,13 @@ const OrderSummary = (props: Props) => {
                         </Typography>
                         <Typography
                             className={fee}
-                        >$59.99/year</Typography>
+                        >
+                            $59.99/year
+                        </Typography>
                     </Grid>
                     <Grid item>
                         <Link
-                            underline="always"
-                            className={change}
+                            underline="hover"
                         >
                             Change
                         </Link>
@@ -131,14 +111,12 @@ const OrderSummary = (props: Props) => {
                     className={actions}>
                     <Button
                         color="primary"
-                        className={classNames(button, proceedPayment)}
                         variant="contained"
                         fullWidth
                     >
                         Proceed to Payment
                     </Button>
                     <Button
-                        className={classNames(button, cancelOrder)}
                         fullWidth
                     >
                         Cancel Order
