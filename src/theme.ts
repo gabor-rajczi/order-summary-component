@@ -45,12 +45,7 @@ const themeDefault = createTheme({
             "sans-serif"
         ].join(",")
     },
-    breakpoints: {
-        values: {
-            mobile: 375,
-            desktop: 1440,
-        }
-    },
+
     palette: {
         primaryBlue: {
             pale: "hsl(225, 100%, 94%)",
@@ -84,6 +79,13 @@ const themeDefault = createTheme({
 });
 
 const theme = createTheme({
+    breakpoints: {
+        values: {
+            ...themeDefault.breakpoints.values,
+            mobile: 375,
+            desktop: 1440,
+        }
+    },
     overrides: {
         MuiButton: {
             containedPrimary: {
