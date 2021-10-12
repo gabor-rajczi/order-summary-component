@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => createStyles({
         backgroundRepeatY: "no-repeat",
         backgroundSize: "contain",
         backgroundImage: `url(${BackgroundMobile})`,
-        [theme.breakpoints.up("mobile")]: {
+        [theme.breakpoints.up(theme.breakpoints.values.mobile)]: {
             backgroundImage: `url(${BackgroundDesktop})`,
         },
         backgroundColor: theme.palette.primaryBlue.pale,
