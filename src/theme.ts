@@ -81,7 +81,6 @@ const themeDefault = createTheme({
 const theme = createTheme({
     breakpoints: {
         values: {
-            ...themeDefault.breakpoints.values,
             mobile: 375,
             desktop: 1440,
         }
