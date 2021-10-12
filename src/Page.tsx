@@ -10,8 +10,7 @@ interface Props {
 const useStyles = makeStyles(theme => createStyles({
     root: {
         height: "100vh",
-        backgroundRepeatX: "repeat",
-        backgroundRepeatY: "no-repeat",
+        backgroundRepeat: "repeat no-repeat",
         backgroundSize: "contain",
         backgroundImage: `url(${BackgroundMobile})`,
         [theme.breakpoints.up(theme.breakpoints.values.mobile)]: {
